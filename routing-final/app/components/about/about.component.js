@@ -9,37 +9,27 @@ System.register(['angular2/core'], function(exports_1) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
     var core_1;
-    var WarenkorbService;
+    var AboutComponent;
     return {
         setters:[
             function (core_1_1) {
                 core_1 = core_1_1;
             }],
         execute: function() {
-            WarenkorbService = (function () {
-                function WarenkorbService() {
-                    this.update = new core_1.EventEmitter();
-                    this.warenkorb = [];
+            AboutComponent = (function () {
+                function AboutComponent() {
                 }
-                WarenkorbService.prototype.meinWarenkorb = function () {
-                    return this.warenkorb;
-                };
-                WarenkorbService.prototype.addWarenkorb = function (eintrag) {
-                    this.warenkorb.push(eintrag);
-                    this.update.next(true);
-                };
-                __decorate([
-                    core_1.Output(), 
-                    __metadata('design:type', core_1.EventEmitter)
-                ], WarenkorbService.prototype, "update", void 0);
-                WarenkorbService = __decorate([
-                    core_1.Injectable(), 
+                AboutComponent = __decorate([
+                    core_1.Component({
+                        selector: 'about',
+                        template: "\n    <div>Wir sind Ihr Lieferdienst, wenn es um PIZZA* geht! Daf\u00FCr stehen wir mit unserem Namen.<br><br><small>*ohne Ananas!</small></div>\n    "
+                    }), 
                     __metadata('design:paramtypes', [])
-                ], WarenkorbService);
-                return WarenkorbService;
+                ], AboutComponent);
+                return AboutComponent;
             })();
-            exports_1("WarenkorbService", WarenkorbService);
+            exports_1("AboutComponent", AboutComponent);
         }
     }
 });
-//# sourceMappingURL=warenkorb.service.js.map
+//# sourceMappingURL=about.component.js.map

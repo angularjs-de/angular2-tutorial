@@ -9,36 +9,37 @@ System.register(['angular2/core'], function(exports_1) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
     var core_1;
-    var PizzaSuchePipe;
+    var CartService;
     return {
         setters:[
             function (core_1_1) {
                 core_1 = core_1_1;
             }],
         execute: function() {
-            PizzaSuchePipe = (function () {
-                function PizzaSuchePipe() {
+            CartService = (function () {
+                function CartService() {
+                    this.update = new core_1.EventEmitter();
+                    this.cart = [];
                 }
-                PizzaSuchePipe.prototype.transform = function (pizzen, args) {
-                    var suchString = args[0], treffer = [];
-                    if (!suchString) {
-                        return pizzen;
-                    }
-                    pizzen.forEach(function (pizza) {
-                        if (pizza.name.match(new RegExp(suchString, 'i'))) {
-                            treffer.push(pizza);
-                        }
-                    });
-                    return treffer;
+                CartService.prototype.getCart = function () {
+                    return this.cart;
                 };
-                PizzaSuchePipe = __decorate([
-                    core_1.Pipe({ name: 'pizzaSuche' }), 
+                CartService.prototype.addCartItem = function (item) {
+                    this.cart.push(item);
+                    this.update.next(true);
+                };
+                __decorate([
+                    core_1.Output(), 
+                    __metadata('design:type', core_1.EventEmitter)
+                ], CartService.prototype, "update", void 0);
+                CartService = __decorate([
+                    core_1.Injectable(), 
                     __metadata('design:paramtypes', [])
-                ], PizzaSuchePipe);
-                return PizzaSuchePipe;
+                ], CartService);
+                return CartService;
             })();
-            exports_1("PizzaSuchePipe", PizzaSuchePipe);
+            exports_1("CartService", CartService);
         }
     }
 });
-//# sourceMappingURL=pizzaSuche.pipe.js.map
+//# sourceMappingURL=cart.service.js.map

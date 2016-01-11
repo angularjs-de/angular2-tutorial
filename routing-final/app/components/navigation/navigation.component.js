@@ -1,4 +1,4 @@
-System.register(['angular2/core', 'angular2/router', '../../services/warenkorb.service'], function(exports_1) {
+System.register(['angular2/core', 'angular2/router', '../../services/cart.service'], function(exports_1) {
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
         var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
         if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -8,7 +8,7 @@ System.register(['angular2/core', 'angular2/router', '../../services/warenkorb.s
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, router_1, warenkorb_service_1;
+    var core_1, router_1, cart_service_1;
     var NavigationComponent;
     return {
         setters:[
@@ -18,23 +18,23 @@ System.register(['angular2/core', 'angular2/router', '../../services/warenkorb.s
             function (router_1_1) {
                 router_1 = router_1_1;
             },
-            function (warenkorb_service_1_1) {
-                warenkorb_service_1 = warenkorb_service_1_1;
+            function (cart_service_1_1) {
+                cart_service_1 = cart_service_1_1;
             }],
         execute: function() {
             NavigationComponent = (function () {
-                function NavigationComponent(_warenkorbService) {
-                    this._warenkorbService = _warenkorbService;
-                    this.neuerWarenkorb = false;
+                function NavigationComponent(_cartService) {
+                    this._cartService = _cartService;
+                    this.cartUpdated = false;
                 }
                 NavigationComponent.prototype.ngOnInit = function () {
                     var _this = this;
-                    this._warenkorbService.update.subscribe(function (update) {
+                    this._cartService.update.subscribe(function (update) {
                         if (update) {
                             var self = _this;
-                            _this.neuerWarenkorb = true;
+                            _this.cartUpdated = true;
                             setTimeout(function () {
-                                self.neuerWarenkorb = false;
+                                self.cartUpdated = false;
                             }, 500);
                         }
                     });
@@ -43,9 +43,9 @@ System.register(['angular2/core', 'angular2/router', '../../services/warenkorb.s
                     core_1.Component({
                         selector: 'navigation',
                         directives: [router_1.ROUTER_DIRECTIVES],
-                        template: "\n    <p class=\"well\">\n      <a [routerLink]=\"['Bestellung']\">Start</a> | <a [routerLink]=\"['Ueber']\">\u00DCber</a>\n      <a class=\"pull-right\" *ngIf=\"neuerWarenkorb\">Warekorb aktualisiert!</a>\n    </p>\n    "
+                        template: "\n    <p class=\"well\">\n      <a [routerLink]=\"['Order']\">Start</a> | <a [routerLink]=\"['About']\">\u00DCber</a>\n      <a class=\"pull-right\" *ngIf=\"cartUpdated\">Warekorb aktualisiert!</a>\n    </p>\n    "
                     }), 
-                    __metadata('design:paramtypes', [warenkorb_service_1.WarenkorbService])
+                    __metadata('design:paramtypes', [cart_service_1.CartService])
                 ], NavigationComponent);
                 return NavigationComponent;
             })();

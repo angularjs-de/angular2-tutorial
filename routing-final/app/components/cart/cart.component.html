@@ -1,0 +1,21 @@
+<b>Mein Warenkorb</b>
+
+<table class="table" *ngIf="currentCart.length">
+    <tbody>
+        <tr *ngFor="#cartItem of currentCart" class="cart-item">
+            <td>{{cartItem.name}}</td>
+            <td *ngIf="cartItem.price">{{cartItem.price | currency:'USD':true}}</td>
+            <td *ngIf="!cartItem.price">kostenlos</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <td><b>Gesamt:</b> {{currentCart.length}} Artikel</td>
+            <td><b>{{calcTotalSum() | currency:'USD':true}}</b></td>
+        </tr>
+    </tfoot>
+</table>
+
+<p [style.visibility]="currentCart.length ? 'hidden' : 'inherit'" class="alert alert-info">
+    Ihr Warenkorb ist noch leer.
+</p>

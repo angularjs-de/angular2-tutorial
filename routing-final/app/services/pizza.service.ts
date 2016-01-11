@@ -10,8 +10,8 @@ export class PizzaService {
     constructor(private _http: Http) {
     }
 
-    ladeAngebot() {
-        return this._http.get('assets/pizzen.json')
+    getPizza() {
+        return this._http.get('assets/pizza.json')
             .map(res => res.json());
     }
 }

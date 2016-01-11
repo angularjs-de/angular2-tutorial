@@ -1,7 +1,7 @@
 <form #suchFormular="ngForm">
     <label for="suche">Pizza-Suche</label>
     <br>
-    <input type="text" name="suche" [(ngModel)]="suche" placeholder="Pizza-Name">
+    <input type="text" name="search" [(ngModel)]="search" placeholder="Pizza-Name">
 </form>
 <table class="table">
     <thead>
@@ -20,17 +20,17 @@
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="#pizza of pizzen | pizzaSuche:suche; #index=index">
+        <tr *ngFor="#pizza of pizzas | pizzaSearch:search; #index=index">
             <td>{{index + 1}}</td>
             <td>{{pizza.name}}</td>
-            <td *ngIf="pizza.preis">{{pizza.preis | currency:'USD':true}}</td>
+            <td *ngIf="pizza.preis">{{pizza.price | currency:'USD':true}}</td>
             <td *ngIf="!pizza.preis">kostenlos</td>
             <td>
-                <a class="btn btn-default btn-sm" (click)="zumWarenkorb(pizza)">
+                <a class="btn btn-default btn-sm" (click)="addToCart(pizza)">
                     Hinzufügen
                 </a>
             </td>
         </tr>
     </tbody>
 </table>
-<warenkorb></warenkorb>
+<cart></cart>

@@ -1,31 +1,31 @@
 import {Component, OnInit} from 'angular2/core';
 import {RouteConfig, ROUTER_DIRECTIVES} from 'angular2/router';
 
-import {WarenkorbService} from '../../services/warenkorb.service';
+import {CartService} from '../../services/cart.service';
 
 @Component({
     selector: 'navigation',
     directives: [ROUTER_DIRECTIVES],
     template: `
     <p class="well">
-      <a [routerLink]="['Bestellung']">Start</a> | <a [routerLink]="['Ueber']">Über</a>
-      <a class="pull-right" *ngIf="neuerWarenkorb">Warekorb aktualisiert!</a>
+      <a [routerLink]="['Order']">Start</a> | <a [routerLink]="['About']">Über</a>
+      <a class="pull-right" *ngIf="cartUpdated">Warekorb aktualisiert!</a>
     </p>
     `
 })
 export class NavigationComponent {
-    public neuerWarenkorb: boolean;
-    constructor(private _warenkorbService: WarenkorbService) {
-        this.neuerWarenkorb = false;
+    public cartUpdated: boolean;
+    constructor(private _cartService: CartService) {
+        this.cartUpdated = false;
     }
 
     ngOnInit() {
-        this._warenkorbService.update.subscribe(update => {
+        this._cartService.update.subscribe(update => {
             if (update) {
                 var self = this;
-                this.neuerWarenkorb = true;
+                this.cartUpdated = true;
                 setTimeout(function () {
-                    self.neuerWarenkorb = false;
+                    self.cartUpdated = false;
                 }, 500)
             }
         });
