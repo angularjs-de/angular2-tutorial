@@ -22,7 +22,7 @@ System.register(['angular2/core'], function(exports_1) {
                 PizzaAppComponent = __decorate([
                     core_1.Component({
                         selector: 'pizza-app',
-                        template: "\n    <div *ngFor=\"#zahl of [1, 5, 34, 47]; #aktuellerIndex=index\">\n        Aktuelle Zahl ist: {{zahl}} ({{aktuellerIndex}})\n    </div>\n    "
+                        template: "\n    <div *ngFor=\"#number of [1, 5, 34, 47]; #currentIndex=index\">\n        Aktuelle Zahl ist: {{number}} ({{currentIndex}})\n    </div>\n    "
                     }), 
                     __metadata('design:paramtypes', [])
                 ], PizzaAppComponent);

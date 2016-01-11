@@ -29,6 +29,7 @@ System.register(['angular2/http', 'angular2/core', 'rxjs/add/operator/map'], fun
                         .map(function (res) { return res.json(); });
                 };
                 PizzaService = __decorate([
+                    // add map function to observable
                     core_1.Injectable(), 
                     __metadata('design:paramtypes', [http_1.Http])
                 ], PizzaService);

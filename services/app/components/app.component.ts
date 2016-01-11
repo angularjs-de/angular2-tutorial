@@ -6,13 +6,13 @@ import {PizzaService} from '../services/pizza.service';
     selector: 'pizza-app',
     providers: [PizzaService],
     template: `
-    <span>Anzahl an Pizzen: {{pizzen.length}}</span>
+    <span>Anzahl an Pizzen: {{pizzas.length}}</span>
     `
 })
 export class PizzaAppComponent {
-    public pizzen = [];
+    public pizzas = [];
 
     constructor(private _pizzaService: PizzaService) {
-        this.pizzen = this._pizzaService.ladeAngebot();
+        this.pizzas = this._pizzaService.getPizza();
     }
 }

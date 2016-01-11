@@ -1,4 +1,4 @@
-System.register(['angular2/core', '../services/pizza.service'], function(exports_1) {
+System.register(['angular2/core', 'angular2/http', '../services/pizza.service'], function(exports_1) {
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
         var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
         if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -8,12 +8,15 @@ System.register(['angular2/core', '../services/pizza.service'], function(exports
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, pizza_service_1;
+    var core_1, http_1, pizza_service_1;
     var PizzaAppComponent;
     return {
         setters:[
             function (core_1_1) {
                 core_1 = core_1_1;
+            },
+            function (http_1_1) {
+                http_1 = http_1_1;
             },
             function (pizza_service_1_1) {
                 pizza_service_1 = pizza_service_1_1;
@@ -22,17 +25,17 @@ System.register(['angular2/core', '../services/pizza.service'], function(exports
             PizzaAppComponent = (function () {
                 function PizzaAppComponent(_pizzaService) {
                     this._pizzaService = _pizzaService;
-                    this.pizzen = [];
+                    this.pizzas = [];
                 }
                 PizzaAppComponent.prototype.ngOnInit = function () {
                     var _this = this;
-                    this._pizzaService.ladeAngebot().subscribe(function (pizzen) { return _this.pizzen = pizzen; });
+                    this._pizzaService.getPizza().subscribe(function (pizzas) { return _this.pizzas = pizzas; });
                 };
                 PizzaAppComponent = __decorate([
                     core_1.Component({
                         selector: 'pizza-app',
-                        providers: [pizza_service_1.PizzaService],
-                        template: "\n    <span>Anzahl an Pizzen: {{pizzen.length}}</span>\n    "
+                        providers: [pizza_service_1.PizzaService, http_1.HTTP_PROVIDERS],
+                        template: "\n    <span>Anzahl an Pizzen: {{pizzas.length}}</span>\n    "
                     }), 
                     __metadata('design:paramtypes', [pizza_service_1.PizzaService])
                 ], PizzaAppComponent);

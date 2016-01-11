@@ -9,27 +9,28 @@ System.register(['angular2/core'], function(exports_1) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
     var core_1;
-    var PlusZweiPipe;
+    var RedFontDirective;
     return {
         setters:[
             function (core_1_1) {
                 core_1 = core_1_1;
             }],
         execute: function() {
-            PlusZweiPipe = (function () {
-                function PlusZweiPipe() {
+            RedFontDirective = (function () {
+                function RedFontDirective(el, renderer) {
+                    // el.nativeElement.style.color = 'red';
+                    renderer.setElementStyle(el.nativeElement, 'color', 'red');
                 }
-                PlusZweiPipe.prototype.transform = function (zahl, args) {
-                    return zahl + 2;
-                };
-                PlusZweiPipe = __decorate([
-                    core_1.Pipe({ name: 'plusZwei' }), 
-                    __metadata('design:paramtypes', [])
-                ], PlusZweiPipe);
-                return PlusZweiPipe;
+                RedFontDirective = __decorate([
+                    core_1.Directive({
+                        selector: '[redFont]'
+                    }), 
+                    __metadata('design:paramtypes', [core_1.ElementRef, core_1.Renderer])
+                ], RedFontDirective);
+                return RedFontDirective;
             })();
-            exports_1("PlusZweiPipe", PlusZweiPipe);
+            exports_1("RedFontDirective", RedFontDirective);
         }
     }
 });
-//# sourceMappingURL=plusZwei.pipe.js.map
+//# sourceMappingURL=redFont.directive.js.map

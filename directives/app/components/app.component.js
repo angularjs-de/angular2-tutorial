@@ -1,4 +1,4 @@
-System.register(['angular2/core', '../directives/schriftRot.directive'], function(exports_1) {
+System.register(['angular2/core', '../directives/redFont.directive'], function(exports_1) {
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
         var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
         if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -8,26 +8,26 @@ System.register(['angular2/core', '../directives/schriftRot.directive'], functio
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, schriftRot_directive_1;
+    var core_1, redFont_directive_1;
     var PizzaAppComponent;
     return {
         setters:[
             function (core_1_1) {
                 core_1 = core_1_1;
             },
-            function (schriftRot_directive_1_1) {
-                schriftRot_directive_1 = schriftRot_directive_1_1;
+            function (redFont_directive_1_1) {
+                redFont_directive_1 = redFont_directive_1_1;
             }],
         execute: function() {
             PizzaAppComponent = (function () {
                 function PizzaAppComponent() {
-                    this.istSichtbar = true;
+                    this.isvisible = true;
                 }
                 PizzaAppComponent = __decorate([
                     core_1.Component({
                         selector: 'pizza-app',
-                        directives: [schriftRot_directive_1.SchriftRotDirective],
-                        template: "\n    <button (click)=\"istSichtbar = !istSichtbar\" schriftRot>anzeigen | verstecken</button>\n    <div *ngIf=\"istSichtbar\" [style.color]=\"'red'\">Wir sind Ihr Pizza-Dienstleister!</div>\n    "
+                        directives: [redFont_directive_1.RedFontDirective],
+                        template: "\n    <button (click)=\"isvisible = !isvisible\" redFont>anzeigen | verstecken</button>\n    <div *ngIf=\"isvisible\" [style.color]=\"'red'\">Wir sind Ihr Pizza-Dienstleister!</div>\n    "
                     }), 
                     __metadata('design:paramtypes', [])
                 ], PizzaAppComponent);

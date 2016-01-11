@@ -4,12 +4,11 @@ import 'rxjs/add/operator/map'; // add map function to observable
 
 @Injectable()
 export class PizzaService {
-    private pizzen = [];
     constructor(private _http: Http) {
     }
 
-    ladeAngebot() {
-        return this._http.get('assets/pizzen.json')
+    getPizza() {
+        return this._http.get('assets/pizza.json')
             .map(res => res.json());
     }
 }

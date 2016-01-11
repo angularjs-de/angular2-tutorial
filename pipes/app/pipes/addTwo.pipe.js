@@ -9,28 +9,27 @@ System.register(['angular2/core'], function(exports_1) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
     var core_1;
-    var SchriftRotDirective;
+    var AddTwoPipe;
     return {
         setters:[
             function (core_1_1) {
                 core_1 = core_1_1;
             }],
         execute: function() {
-            SchriftRotDirective = (function () {
-                function SchriftRotDirective(el, renderer) {
-                    // el.nativeElement.style.color = 'red';
-                    renderer.setElementStyle(el.nativeElement, 'color', 'red');
+            AddTwoPipe = (function () {
+                function AddTwoPipe() {
                 }
-                SchriftRotDirective = __decorate([
-                    core_1.Directive({
-                        selector: '[schriftRot]'
-                    }), 
-                    __metadata('design:paramtypes', [core_1.ElementRef, core_1.Renderer])
-                ], SchriftRotDirective);
-                return SchriftRotDirective;
+                AddTwoPipe.prototype.transform = function (number, args) {
+                    return number + 2;
+                };
+                AddTwoPipe = __decorate([
+                    core_1.Pipe({ name: 'addTwo' }), 
+                    __metadata('design:paramtypes', [])
+                ], AddTwoPipe);
+                return AddTwoPipe;
             })();
-            exports_1("SchriftRotDirective", SchriftRotDirective);
+            exports_1("AddTwoPipe", AddTwoPipe);
         }
     }
 });
-//# sourceMappingURL=schriftRot.directive.js.map
+//# sourceMappingURL=addTwo.pipe.js.map

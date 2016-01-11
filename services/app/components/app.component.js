@@ -22,14 +22,14 @@ System.register(['angular2/core', '../services/pizza.service'], function(exports
             PizzaAppComponent = (function () {
                 function PizzaAppComponent(_pizzaService) {
                     this._pizzaService = _pizzaService;
-                    this.pizzen = [];
-                    this.pizzen = this._pizzaService.ladeAngebot();
+                    this.pizzas = [];
+                    this.pizzas = this._pizzaService.getPizza();
                 }
                 PizzaAppComponent = __decorate([
                     core_1.Component({
                         selector: 'pizza-app',
                         providers: [pizza_service_1.PizzaService],
-                        template: "\n    <span>Anzahl an Pizzen: {{pizzen.length}}</span>\n    "
+                        template: "\n    <span>Anzahl an Pizzen: {{pizzas.length}}</span>\n    "
                     }), 
                     __metadata('design:paramtypes', [pizza_service_1.PizzaService])
                 ], PizzaAppComponent);

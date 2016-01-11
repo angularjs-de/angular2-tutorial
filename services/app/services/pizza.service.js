@@ -19,23 +19,23 @@ System.register(['angular2/core'], function(exports_1) {
             PizzaService = (function () {
                 function PizzaService() {
                 }
-                PizzaService.prototype.ladeAngebot = function () {
+                PizzaService.prototype.getPizza = function () {
                     return [{
                             "id": 1,
                             "name": "Pizza Vegetaria",
-                            "preis": 5.99
+                            "price": 5.99
                         }, {
                             "id": 2,
                             "name": "Pizza Salami",
-                            "preis": 10.99
+                            "price": 10.99
                         }, {
                             "id": 3,
                             "name": "Pizza Thunfisch",
-                            "preis": 7.99
+                            "price": 7.99
                         }, {
                             "id": 4,
                             "name": "Aktueller Flyer",
-                            "preis": 0
+                            "price": 0
                         }];
                 };
                 PizzaService = __decorate([

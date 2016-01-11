@@ -1,14 +1,14 @@
 import {Component} from 'angular2/core';
 
-import {PlusZweiPipe} from '../pipes/plusZwei.pipe';
+import {AddTwoPipe} from '../pipes/addTwo.pipe';
 
 @Component({
     selector: 'pizza-app',
-    pipes: [PlusZweiPipe],
+    pipes: [AddTwoPipe],
     template: `
     <span>{{10.99 | currency}}</span>
     <span>{{10.99 | currency:'EUR':true}}</span>
-    <div>{{1 | plusZwei}}</div>
+    <div>{{1 | addTwo}}</div>
     `
 })
 export class PizzaAppComponent {

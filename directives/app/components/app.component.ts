@@ -1,15 +1,15 @@
 import {Component} from 'angular2/core';
 
-import {SchriftRotDirective} from '../directives/schriftRot.directive';
+import {RedFontDirective} from '../directives/redFont.directive';
 
 @Component({
     selector: 'pizza-app',
-    directives: [SchriftRotDirective],
+    directives: [RedFontDirective],
     template: `
-    <button (click)="istSichtbar = !istSichtbar" schriftRot>anzeigen | verstecken</button>
-    <div *ngIf="istSichtbar" [style.color]="'red'">Wir sind Ihr Pizza-Dienstleister!</div>
+    <button (click)="isvisible = !isvisible" redFont>anzeigen | verstecken</button>
+    <div *ngIf="isvisible" [style.color]="'red'">Wir sind Ihr Pizza-Dienstleister!</div>
     `
 })
 export class PizzaAppComponent {
-    public istSichtbar:boolean = true;
+    public isvisible:boolean = true;
 }
