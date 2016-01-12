@@ -28,8 +28,8 @@ export class OrderComponent {
     constructor(private _cartService: CartService, private _pizzaService: PizzaService) {
     }
 
-    routerOnActivate() {
-        console.log(arguments);
+    routerOnActivate(nextInstruction, prevInstruction) {
+        console.log(nextInstruction, prevInstruction);
     }
 
     ngOnInit() {

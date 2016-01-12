@@ -6,10 +6,10 @@ import {RedFontDirective} from '../directives/redFont.directive';
     selector: 'pizza-app',
     directives: [RedFontDirective],
     template: `
-    <button (click)="isvisible = !isvisible" redFont>anzeigen | verstecken</button>
-    <div *ngIf="isvisible" [style.color]="'red'">Wir sind Ihr Pizza-Dienstleister!</div>
+    <button (click)="isVisible = !isVisible" redFont>anzeigen | verstecken</button>
+    <div *ngIf="isVisible" [style.color]="'red'">Wir sind Ihr Pizza-Dienstleister!</div>
     `
 })
 export class PizzaAppComponent {
-    public isvisible:boolean = true;
+    public isVisible:boolean = true;
 }

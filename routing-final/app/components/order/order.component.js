@@ -1,4 +1,5 @@
 System.register(['angular2/core', 'angular2/common', 'angular2/router', '../../services/cart.service', '../../services/pizza.service', '../cart/cart.component.ts', '../../pipes/pizzaSearch.pipe.ts'], function(exports_1) {
+    "use strict";
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
         var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
         if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -39,8 +40,8 @@ System.register(['angular2/core', 'angular2/common', 'angular2/router', '../../s
                     this._cartService = _cartService;
                     this._pizzaService = _pizzaService;
                 }
-                OrderComponent.prototype.routerOnActivate = function () {
-                    console.log(arguments);
+                OrderComponent.prototype.routerOnActivate = function (nextInstruction, prevInstruction) {
+                    console.log(nextInstruction, prevInstruction);
                 };
                 OrderComponent.prototype.ngOnInit = function () {
                     var _this = this;
@@ -71,7 +72,7 @@ System.register(['angular2/core', 'angular2/common', 'angular2/router', '../../s
                     __metadata('design:paramtypes', [cart_service_1.CartService, pizza_service_1.PizzaService])
                 ], OrderComponent);
                 return OrderComponent;
-            })();
+            }());
             exports_1("OrderComponent", OrderComponent);
         }
     }

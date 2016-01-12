@@ -1,10 +1,11 @@
 import {Component} from 'angular2/core';
+import {HTTP_PROVIDERS} from 'angular2/http';
 
 import {PizzaService} from '../services/pizza.service';
 
 @Component({
     selector: 'pizza-app',
-    providers: [PizzaService],
+    providers: [PizzaService, HTTP_PROVIDERS],
     template: `
     <span>Anzahl an Pizzen: {{pizzas.length}}</span>
     `

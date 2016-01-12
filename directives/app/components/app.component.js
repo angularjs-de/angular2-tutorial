@@ -21,13 +21,13 @@ System.register(['angular2/core', '../directives/redFont.directive'], function(e
         execute: function() {
             PizzaAppComponent = (function () {
                 function PizzaAppComponent() {
-                    this.isvisible = true;
+                    this.isVisible = true;
                 }
                 PizzaAppComponent = __decorate([
                     core_1.Component({
                         selector: 'pizza-app',
                         directives: [redFont_directive_1.RedFontDirective],
-                        template: "\n    <button (click)=\"isvisible = !isvisible\" redFont>anzeigen | verstecken</button>\n    <div *ngIf=\"isvisible\" [style.color]=\"'red'\">Wir sind Ihr Pizza-Dienstleister!</div>\n    "
+                        template: "\n    <button (click)=\"isVisible = !isVisible\" redFont>anzeigen | verstecken</button>\n    <div *ngIf=\"isVisible\" [style.color]=\"'red'\">Wir sind Ihr Pizza-Dienstleister!</div>\n    "
                     }), 
                     __metadata('design:paramtypes', [])
                 ], PizzaAppComponent);
