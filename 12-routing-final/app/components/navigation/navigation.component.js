@@ -43,7 +43,7 @@ System.register(['angular2/core', 'angular2/router', '../../services/cart.servic
                     core_1.Component({
                         selector: 'navigation',
                         directives: [router_1.ROUTER_DIRECTIVES],
-                        template: "\n    <p class=\"well\">\n      <a [routerLink]=\"['Order']\">Start</a> | <a [routerLink]=\"['About']\">\u00DCber</a>\n      <a class=\"pull-right\" *ngIf=\"cartUpdated\">Warekorb aktualisiert!</a>\n    </p>\n    "
+                        template: "\n    <p class=\"well\">\n      <a [routerLink]=\"['Order']\">Start</a> | <a [routerLink]=\"['About', 'Footer']\">\u00DCber</a>\n      <a class=\"pull-right\" *ngIf=\"cartUpdated\">Warekorb aktualisiert!</a>\n    </p>\n    "
                     }), 
                     __metadata('design:paramtypes', [cart_service_1.CartService])
                 ], NavigationComponent);

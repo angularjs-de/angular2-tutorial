@@ -16,7 +16,7 @@ import {CartService} from '../services/cart.service';
     name: 'Order',
     useAsDefault: true
 }, {
-    path: '/about',
+    path: '/about/...',
     component: AboutComponent,
     name: 'About'
 }])

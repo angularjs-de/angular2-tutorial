@@ -44,7 +44,7 @@ System.register(['angular2/core', 'angular2/router', './order/order.component', 
                             name: 'Order',
                             useAsDefault: true
                         }, {
-                            path: '/about',
+                            path: '/about/...',
                             component: about_component_1.AboutComponent,
                             name: 'About'
                         }]),
