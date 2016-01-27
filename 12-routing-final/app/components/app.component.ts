@@ -3,6 +3,7 @@ import {RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS} from 'angular2/router'
 
 import {OrderComponent} from './order/order.component';
 import {AboutComponent} from './about/about.component';
+import {PizzaComponent} from './pizza/pizza.component';
 import {NavigationComponent} from './navigation/navigation.component';
 
 
@@ -16,9 +17,13 @@ import {CartService} from '../services/cart.service';
     name: 'Order',
     useAsDefault: true
 }, {
-    path: '/about/...',
+    path: '/about',
     component: AboutComponent,
     name: 'About'
+}, {
+    path: '/pizza/...',
+    component: PizzaComponent,
+    name: 'Pizza'
 }])
 
 @Component({

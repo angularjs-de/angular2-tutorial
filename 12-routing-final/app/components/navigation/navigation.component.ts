@@ -8,7 +8,7 @@ import {CartService} from '../../services/cart.service';
     directives: [ROUTER_DIRECTIVES],
     template: `
     <p class="well">
-      <a [routerLink]="['Order']">Start</a> | <a [routerLink]="['About', 'Footer']">Über</a>
+      <a [routerLink]="['Order']">Start</a> | <a [routerLink]="['About']">Über</a> | <a [routerLink]="['Pizza', 'List']">Angebot</a>
       <a class="pull-right" *ngIf="cartUpdated">Warekorb aktualisiert!</a>
     </p>
     `

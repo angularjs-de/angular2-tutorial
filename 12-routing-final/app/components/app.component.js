@@ -1,4 +1,4 @@
-System.register(['angular2/core', 'angular2/router', './order/order.component', './about/about.component', './navigation/navigation.component', 'angular2/http', '../services/cart.service'], function(exports_1) {
+System.register(['angular2/core', 'angular2/router', './order/order.component', './about/about.component', './pizza/pizza.component', './navigation/navigation.component', 'angular2/http', '../services/cart.service'], function(exports_1) {
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
         var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
         if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -8,7 +8,7 @@ System.register(['angular2/core', 'angular2/router', './order/order.component', 
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, router_1, order_component_1, about_component_1, navigation_component_1, http_1, cart_service_1;
+    var core_1, router_1, order_component_1, about_component_1, pizza_component_1, navigation_component_1, http_1, cart_service_1;
     var PizzaAppComponent;
     return {
         setters:[
@@ -23,6 +23,9 @@ System.register(['angular2/core', 'angular2/router', './order/order.component', 
             },
             function (about_component_1_1) {
                 about_component_1 = about_component_1_1;
+            },
+            function (pizza_component_1_1) {
+                pizza_component_1 = pizza_component_1_1;
             },
             function (navigation_component_1_1) {
                 navigation_component_1 = navigation_component_1_1;
@@ -44,9 +47,13 @@ System.register(['angular2/core', 'angular2/router', './order/order.component', 
                             name: 'Order',
                             useAsDefault: true
                         }, {
-                            path: '/about/...',
+                            path: '/about',
                             component: about_component_1.AboutComponent,
                             name: 'About'
+                        }, {
+                            path: '/pizza/...',
+                            component: pizza_component_1.PizzaComponent,
+                            name: 'Pizza'
                         }]),
                     core_1.Component({
                         selector: 'pizza-app',
