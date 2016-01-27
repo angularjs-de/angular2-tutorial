@@ -14,6 +14,10 @@ export class PizzaAppComponent {
     public pizzas = [];
 
     constructor(private _pizzaService: PizzaService) {
+        this.loadData();
+    }
+    
+    loadData() {
         this._pizzaService.getPizza().subscribe(pizzas => this.pizzas = pizzas);
     }
 }
