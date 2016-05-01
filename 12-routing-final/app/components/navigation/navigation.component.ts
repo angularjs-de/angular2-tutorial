@@ -22,10 +22,9 @@ export class NavigationComponent {
     ngOnInit() {
         this._cartService.update.subscribe(update => {
             if (update) {
-                var self = this;
                 this.cartUpdated = true;
-                setTimeout(function () {
-                    self.cartUpdated = false;
+                setTimeout(() => {
+                    this.cartUpdated = false;
                 }, 500)
             }
         });

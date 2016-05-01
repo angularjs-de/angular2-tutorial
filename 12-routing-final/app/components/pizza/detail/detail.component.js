@@ -31,8 +31,7 @@ System.register(['angular2/core', 'angular2/router', '../../../services/pizza.se
                     this._pizzaId = parseInt(_routeParams.get('id'), 10);
                 }
                 PizzaDetailComponent.prototype._getPizza = function (pizzas) {
-                    var i = 0;
-                    for (i; i < pizzas.length; i = i + 1) {
+                    for (var i = 0; i < pizzas.length; i = i + 1) {
                         if (pizzas[i].id === this._pizzaId) {
                             this.pizza = pizzas[i];
                             return;

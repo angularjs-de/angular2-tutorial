@@ -4,7 +4,7 @@ import {Pizza} from '../interfaces/pizza.interface';
 @Pipe({name: 'pizzaSearch'})
 export class PizzaSearchPipe implements PipeTransform {
     transform(pizzas:Pizza[], searchString: string) : any {
-        var matches = [];
+        let matches = [];
 
         if (!searchString) {
             return pizzas;

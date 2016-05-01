@@ -23,7 +23,7 @@ export class CartComponent {
     }
 
     calcTotalSum() {
-        var sum = 0;
+        let sum = 0;
 
         this.currentCart.forEach(function (cartItem) {
             sum = sum + cartItem.price;

@@ -15,9 +15,7 @@ export class PizzaDetailComponent {
     public pizza: Pizza;
     private _pizzaId: Number
     private _getPizza(pizzas: Array<Pizza>) {
-        var i = 0;
-
-        for (i; i < pizzas.length; i = i + 1) {
+        for (let i = 0; i < pizzas.length; i = i + 1) {
             if (pizzas[i].id === this._pizzaId) {
                 this.pizza = pizzas[i];
 
