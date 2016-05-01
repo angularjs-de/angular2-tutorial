@@ -17,8 +17,8 @@
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="#pizza of pizzas; #index=index" [routerLink]="['Detail', {'id': pizza.id}]">
-            <td>{{index + 1}}</td>
+        <tr *ngFor="let pizza of pizzas; let i=index" [routerLink]="['Detail', {'id': pizza.id}]">
+            <td>{{i + 1}}</td>
             <td>{{pizza.name}}</td>
             <td *ngIf="pizza.price">{{pizza.price | currency:'USD':true}}</td>
             <td *ngIf="!pizza.price">kostenlos</td>

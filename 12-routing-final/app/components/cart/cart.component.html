@@ -2,7 +2,7 @@
 
 <table class="table" *ngIf="currentCart.length">
     <tbody>
-        <tr *ngFor="#cartItem of currentCart" class="cart-item">
+        <tr *ngFor="let cartItem of currentCart" class="cart-item">
             <td>{{cartItem.name}}</td>
             <td *ngIf="cartItem.price">{{cartItem.price | currency:'USD':true}}</td>
             <td *ngIf="!cartItem.price">kostenlos</td>

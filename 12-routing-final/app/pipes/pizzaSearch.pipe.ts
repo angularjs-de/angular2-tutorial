@@ -3,10 +3,8 @@ import {Pizza} from '../interfaces/pizza.interface';
 
 @Pipe({name: 'pizzaSearch'})
 export class PizzaSearchPipe implements PipeTransform {
-    transform(pizzas:Pizza[], args:string[]) : any {
-        var searchString = args[0],
-            matches = [];
-
+    transform(pizzas:Pizza[], searchString: string) : any {
+        var matches = [];
 
         if (!searchString) {
             return pizzas;
