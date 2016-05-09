@@ -1,7 +1,7 @@
-import {Component} from 'angular2/core';
-import {HTTP_PROVIDERS} from 'angular2/http';
+import {Component} from '@angular/core';
+import {HTTP_PROVIDERS} from '@angular/http';
 
-import {PizzaService} from '../services/pizza.service';
+import {PizzaService} from './shared/index';
 
 @Component({
     selector: 'pizza-app',
@@ -11,13 +11,13 @@ import {PizzaService} from '../services/pizza.service';
     `
 })
 export class PizzaAppComponent {
-    public pizzas = [];
+    public pizzas = <Object>[];
 
     constructor(private _pizzaService: PizzaService) {
         this.loadData();
     }
-    
+
     loadData() {
-        this._pizzaService.getPizza().subscribe(pizzas => this.pizzas = pizzas);
+        this._pizzaService.getPizza().subscribe((pizzas: Array<Object>) => this.pizzas = pizzas);
     }
 }
