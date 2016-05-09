@@ -1,0 +1,35 @@
+
+<table class="table">
+    <thead>
+        <tr>
+            <td>
+                <b>Nummer</b>
+            </td>
+            <td>
+                <b>Name</b>
+            </td>
+            <td>
+                <b>Preis</b>
+            </td>
+            <td>
+                <b>ID</b>
+            </td>
+            <td></td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let pizza of pizzas; let i=index">
+            <td>{{i + 1}}</td>
+            <td>{{pizza.name}}</td>
+            <td *ngIf="pizza.price">{{pizza.price | currency:'USD':true}}</td>
+            <td *ngIf="!pizza.price">kostenlos</td>
+            <td>{{pizza.id}}</td>
+            <td>
+                <!-- Absolute paths - else error :( -->
+                <a [routerLink]="['/pizza', 'detail', pizza.id]" class="btn btn-default btn-sm">
+                    Details
+                </a>
+            </td>
+        </tr>
+    </tbody>
+</table>

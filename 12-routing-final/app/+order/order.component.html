@@ -1,0 +1,36 @@
+<form #suchFormular="ngForm">
+    <label for="suche">Pizza-Suche</label>
+    <br>
+    <input type="text" name="search" [(ngModel)]="search" placeholder="Pizza-Name">
+</form>
+<table class="table">
+    <thead>
+        <tr>
+            <td>
+                <b>Nummer</b>
+            </td>
+            <td>
+                <b>Name</b>
+            </td>
+            <td>
+                <b>Preis</b>
+            </td>
+            <td>
+            </td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let pizza of pizzas | pizzaSearch:search; let i = index">
+            <td>{{i + 1}}</td>
+            <td>{{pizza.name}}</td>
+            <td *ngIf="pizza.price">{{pizza.price | currency:'USD':true}}</td>
+            <td *ngIf="!pizza.price">kostenlos</td>
+            <td>
+                <a class="btn btn-default btn-sm" (click)="addToCart(pizza)">
+                    Hinzufügen
+                </a>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<pizza-cart></pizza-cart>
