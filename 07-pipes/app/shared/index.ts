@@ -1,0 +1,1 @@
+export {AddTwoPipe} from './add-two/add-two.pipe';
