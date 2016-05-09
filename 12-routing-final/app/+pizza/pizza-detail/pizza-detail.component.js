@@ -24,12 +24,10 @@ var PizzaDetailComponent = (function () {
         }
     };
     PizzaDetailComponent.prototype.routerOnActivate = function (currentRoute) {
-        console.log('test');
         this.pizzaId = parseInt(currentRoute.getParam('id'), 10);
     };
     PizzaDetailComponent.prototype.ngOnInit = function () {
         var _this = this;
-        console.log('test2');
         this.pizzaService.getPizza().subscribe(function (pizzas) { return _this.getPizza(pizzas); });
     };
     PizzaDetailComponent = __decorate([

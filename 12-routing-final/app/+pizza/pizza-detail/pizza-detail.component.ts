@@ -26,12 +26,10 @@ export class PizzaDetailComponent implements OnInit, OnActivate {
     }
 
     routerOnActivate(currentRoute: RouteSegment) {
-        console.log('test');
         this.pizzaId = parseInt(currentRoute.getParam('id'), 10);
     }
 
     ngOnInit() {
-        console.log('test2');
         this.pizzaService.getPizza().subscribe(pizzas => this.getPizza(pizzas));
     }
 }
