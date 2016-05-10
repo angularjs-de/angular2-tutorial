@@ -13,11 +13,11 @@ import {PizzaService} from './shared/index';
 export class PizzaAppComponent {
     public pizzas = <Object>[];
 
-    constructor(private _pizzaService: PizzaService) {
+    constructor(private pizzaService: PizzaService) {
         this.loadData();
     }
 
     loadData() {
-        this._pizzaService.getPizza().subscribe((pizzas: Array<Object>) => this.pizzas = pizzas);
+        this.pizzaService.getPizza().subscribe((pizzas: Array<Object>) => this.pizzas = pizzas);
     }
 }

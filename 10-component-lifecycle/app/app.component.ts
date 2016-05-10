@@ -13,10 +13,10 @@ import {PizzaService} from './shared/index';
 export class PizzaAppComponent implements OnInit {
     public pizzas = <Object>[];
 
-    constructor(private _pizzaService: PizzaService) {
+    constructor(private pizzaService: PizzaService) {
     }
 
     ngOnInit() {
-        this._pizzaService.getPizza().subscribe((pizzas: Array<Object>) => this.pizzas = pizzas);
+        this.pizzaService.getPizza().subscribe((pizzas: Array<Object>) => this.pizzas = pizzas);
     }
 }

@@ -13,10 +13,10 @@ import {Pizza, PizzaService} from './shared/index';
 export class PizzaAppComponent {
     public pizzas: Pizza[];
 
-    constructor(private _pizzaService: PizzaService) {
+    constructor(private pizzaService: PizzaService) {
     }
 
     ngOnInit() {
-        this._pizzaService.getPizza().subscribe((pizzas: Pizza[]) => this.pizzas = pizzas);
+        this.pizzaService.getPizza().subscribe((pizzas: Pizza[]) => this.pizzas = pizzas);
     }
 }
