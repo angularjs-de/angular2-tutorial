@@ -12,7 +12,7 @@ import {PizzaService} from './shared/index';
 export class PizzaAppComponent {
     public pizzas = <Object>[];
 
-    constructor(private _pizzaService: PizzaService) {
-        this.pizzas = this._pizzaService.getPizza();
+    constructor(private pizzaService: PizzaService) {
+        this.pizzas = this.pizzaService.getPizza();
     }
 }
