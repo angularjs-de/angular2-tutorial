@@ -18,6 +18,8 @@ export class PizzaAppComponent {
     }
 
     loadData() {
-        this.pizzaService.getPizza().subscribe((pizzas: Array<Object>) => this.pizzas = pizzas);
+        this.pizzaService
+            .getPizza()
+            .subscribe((pizzas: Array<Object>) => this.pizzas = pizzas);
     }
 }
