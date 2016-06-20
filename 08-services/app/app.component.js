@@ -11,10 +11,10 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var index_1 = require('./shared/index');
 var PizzaAppComponent = (function () {
-    function PizzaAppComponent(_pizzaService) {
-        this._pizzaService = _pizzaService;
+    function PizzaAppComponent(pizzaService) {
+        this.pizzaService = pizzaService;
         this.pizzas = [];
-        this.pizzas = this._pizzaService.getPizza();
+        this.pizzas = this.pizzaService.getPizza();
     }
     PizzaAppComponent = __decorate([
         core_1.Component({
