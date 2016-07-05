@@ -26,7 +26,7 @@
             <td>{{pizza.id}}</td>
             <td>
                 <!-- Absolute paths - else error :( -->
-                <a [routerLink]="['/pizza', 'detail', pizza.id]" class="btn btn-default btn-sm">
+                <a [routerLink]="['PizzaDetail', {id: pizza.id}]" class="btn btn-default btn-sm">
                     Details
                 </a>
             </td>

@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {OnActivate, RouteSegment, ROUTER_DIRECTIVES} from '@angular/router';
+import {OnActivate, ComponentInstruction, ROUTER_DIRECTIVES} from '@angular/router-deprecated';
 
 import {Pizza, PizzaService} from '../shared/index';
 
@@ -25,8 +25,8 @@ export class PizzaDetailComponent implements OnInit, OnActivate {
     constructor(private pizzaService: PizzaService) {
     }
 
-    routerOnActivate(currentRoute: RouteSegment) {
-        this.pizzaId = parseInt(currentRoute.getParam('id'), 10);
+    routerOnActivate(currentRoute: ComponentInstruction) {
+        this.pizzaId = parseInt(currentRoute.params['id'], 10);
     }
 
     ngOnInit() {

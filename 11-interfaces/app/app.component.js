@@ -12,12 +12,12 @@ var core_1 = require('@angular/core');
 var http_1 = require('@angular/http');
 var index_1 = require('./shared/index');
 var PizzaAppComponent = (function () {
-    function PizzaAppComponent(_pizzaService) {
-        this._pizzaService = _pizzaService;
+    function PizzaAppComponent(pizzaService) {
+        this.pizzaService = pizzaService;
     }
     PizzaAppComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this._pizzaService.getPizza().subscribe(function (pizzas) { return _this.pizzas = pizzas; });
+        this.pizzaService.getPizza().subscribe(function (pizzas) { return _this.pizzas = pizzas; });
     };
     PizzaAppComponent = __decorate([
         core_1.Component({

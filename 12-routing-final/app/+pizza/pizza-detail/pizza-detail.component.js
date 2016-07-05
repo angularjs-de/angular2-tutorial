@@ -9,7 +9,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var router_1 = require('@angular/router');
+var router_deprecated_1 = require('@angular/router-deprecated');
 var index_1 = require('../shared/index');
 var PizzaDetailComponent = (function () {
     function PizzaDetailComponent(pizzaService) {
@@ -24,7 +24,7 @@ var PizzaDetailComponent = (function () {
         }
     };
     PizzaDetailComponent.prototype.routerOnActivate = function (currentRoute) {
-        this.pizzaId = parseInt(currentRoute.getParam('id'), 10);
+        this.pizzaId = parseInt(currentRoute.params['id'], 10);
     };
     PizzaDetailComponent.prototype.ngOnInit = function () {
         var _this = this;
@@ -34,7 +34,7 @@ var PizzaDetailComponent = (function () {
         core_1.Component({
             selector: 'pizza-detail',
             providers: [index_1.PizzaService],
-            directives: [router_1.ROUTER_DIRECTIVES],
+            directives: [router_deprecated_1.ROUTER_DIRECTIVES],
             templateUrl: './app/+pizza/pizza-detail/pizza-detail.component.html'
         }), 
         __metadata('design:paramtypes', [index_1.PizzaService])

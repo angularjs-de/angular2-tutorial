@@ -1,6 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {NgForm} from '@angular/common';
-import {OnActivate, RouteSegment} from '@angular/router';
+import {OnActivate, ComponentInstruction} from '@angular/router-deprecated';
 
 import {CartComponent} from '../cart/cart.component';
 import {CartService} from '../cart/index';
@@ -20,7 +20,7 @@ export class OrderComponent implements OnActivate {
     constructor(private cartService: CartService, private pizzaService: PizzaService) {
     }
 
-    routerOnActivate(currentRoute: RouteSegment, previousRoute: RouteSegment) {
+    routerOnActivate(currentRoute: ComponentInstruction, previousRoute: ComponentInstruction) {
         console.log(currentRoute, previousRoute);
     }
 

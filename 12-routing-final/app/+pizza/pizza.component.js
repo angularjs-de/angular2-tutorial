@@ -9,23 +9,26 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var router_1 = require('@angular/router');
+var router_deprecated_1 = require('@angular/router-deprecated');
 var index_1 = require('./pizza-list/index');
 var index_2 = require('./pizza-detail/index');
 var PizzaComponent = (function () {
     function PizzaComponent() {
     }
     PizzaComponent = __decorate([
-        router_1.Routes([{
+        router_deprecated_1.RouteConfig([{
                 path: '/',
-                component: index_1.PizzaListComponent
+                component: index_1.PizzaListComponent,
+                name: 'PizzaIndex',
+                useAsDefault: true
             }, {
                 path: '/detail/:id',
+                name: 'PizzaDetail',
                 component: index_2.PizzaDetailComponent
             }]),
         core_1.Component({
             selector: 'pizza-component',
-            directives: [router_1.ROUTER_DIRECTIVES],
+            directives: [router_deprecated_1.ROUTER_DIRECTIVES],
             template: '<router-outlet></router-outlet>'
         }), 
         __metadata('design:paramtypes', [])

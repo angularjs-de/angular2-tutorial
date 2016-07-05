@@ -9,7 +9,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var router_1 = require('@angular/router');
+var router_deprecated_1 = require('@angular/router-deprecated');
 var index_1 = require('../../cart/shared/index');
 var NavigationComponent = (function () {
     function NavigationComponent(cartService) {
@@ -31,8 +31,8 @@ var NavigationComponent = (function () {
     NavigationComponent = __decorate([
         core_1.Component({
             selector: 'pizza-navigation',
-            directives: [router_1.ROUTER_DIRECTIVES],
-            template: "\n    <p class=\"well\">\n      <a [routerLink]=\"['/order']\">Start</a> | <a [routerLink]=\"['/about']\">\u00DCber</a> | <a [routerLink]=\"['/pizza']\">Angebot</a>\n      <a class=\"pull-right\" *ngIf=\"cartUpdated\">Warekorb aktualisiert!</a>\n    </p>\n    "
+            directives: [router_deprecated_1.ROUTER_DIRECTIVES],
+            template: "\n    <p class=\"well\">\n      <a [routerLink]=\"['Order']\">Start</a> | <a [routerLink]=\"['About']\">\u00DCber</a> | <a [routerLink]=\"['Pizza']\">Angebot</a>\n      <a class=\"pull-right\" *ngIf=\"cartUpdated\">Warekorb aktualisiert!</a>\n    </p>\n    "
         }), 
         __metadata('design:paramtypes', [index_1.CartService])
     ], NavigationComponent);

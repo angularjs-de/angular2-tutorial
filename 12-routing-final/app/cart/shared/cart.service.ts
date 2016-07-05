@@ -3,7 +3,7 @@ import {CartItem} from './cart-item.model';
 
 @Injectable()
 export class CartService {
-    @Output() update: EventEmitter<boolean> = new EventEmitter();
+    @Output() update: EventEmitter<boolean> = new EventEmitter<boolean>();
     private cart: CartItem[] = [];
 
     getCart(): CartItem[] {

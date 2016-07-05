@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {ROUTER_DIRECTIVES} from '@angular/router';
+import {ROUTER_DIRECTIVES} from '@angular/router-deprecated';
 
 import {CartService} from '../../cart/shared/index';
 
@@ -8,7 +8,7 @@ import {CartService} from '../../cart/shared/index';
     directives: [ROUTER_DIRECTIVES],
     template: `
     <p class="well">
-      <a [routerLink]="['/order']">Start</a> | <a [routerLink]="['/about']">Über</a> | <a [routerLink]="['/pizza']">Angebot</a>
+      <a [routerLink]="['Order']">Start</a> | <a [routerLink]="['About']">Über</a> | <a [routerLink]="['Pizza']">Angebot</a>
       <a class="pull-right" *ngIf="cartUpdated">Warekorb aktualisiert!</a>
     </p>
     `

@@ -1,5 +1,5 @@
 <div *ngIf="pizza">
-    <a [routerLink]="['/pizza']">< zurück</a>
+    <a [routerLink]="['PizzaIndex']">< zurück</a>
     <h3>{{pizza.id}} {{pizza.name}}</h3>
     <p *ngIf="pizza.price">{{pizza.price | currency:'USD':true}}</p>
     <p *ngIf="!pizza.price">kostenlos</p>

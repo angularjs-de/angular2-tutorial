@@ -9,7 +9,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var router_1 = require('@angular/router');
+var router_deprecated_1 = require('@angular/router-deprecated');
 var index_1 = require('../shared/index');
 var PizzaListComponent = (function () {
     function PizzaListComponent(pizzaService) {
@@ -24,7 +24,7 @@ var PizzaListComponent = (function () {
         core_1.Component({
             selector: 'pizza-list',
             providers: [index_1.PizzaService],
-            directives: [router_1.ROUTER_DIRECTIVES],
+            directives: [router_deprecated_1.ROUTER_DIRECTIVES],
             templateUrl: './app/+pizza/pizza-list/pizza-list.component.html'
         }), 
         __metadata('design:paramtypes', [index_1.PizzaService])

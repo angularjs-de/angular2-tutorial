@@ -12,11 +12,11 @@ var http_1 = require('@angular/http');
 var core_1 = require('@angular/core');
 require('rxjs/add/operator/map'); // add map function to observable
 var PizzaService = (function () {
-    function PizzaService(_http) {
-        this._http = _http;
+    function PizzaService(http) {
+        this.http = http;
     }
     PizzaService.prototype.getPizza = function () {
-        return this._http.get('assets/pizza.json')
+        return this.http.get('assets/pizza.json')
             .map(function (res) { return res.json(); });
     };
     PizzaService = __decorate([

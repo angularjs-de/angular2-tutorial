@@ -1,14 +1,17 @@
 import {Component} from '@angular/core';
-import {Routes, ROUTER_DIRECTIVES} from '@angular/router';
+import {RouteConfig, ROUTER_DIRECTIVES} from '@angular/router-deprecated';
 
 import {PizzaListComponent} from './pizza-list/index';
 import {PizzaDetailComponent} from './pizza-detail/index';
 
-@Routes([{
+@RouteConfig([{
     path: '/',
-    component: PizzaListComponent
+    component: PizzaListComponent,
+    name: 'PizzaIndex',
+    useAsDefault: true
 }, {
     path: '/detail/:id',
+    name: 'PizzaDetail',
     component: PizzaDetailComponent
 }])
 
