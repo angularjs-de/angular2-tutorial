@@ -11,7 +11,7 @@ import { Component } from '@angular/core';
   {{search}}
 
   {{search.toUpperCase() + "!"}} oder {{1 + 2 + 3}}
-  {{search.length === 3 ? "UI" : "PFUI"}}
+  {{search.length === 3 ? "ausgebucht" : "noch frei"}}
   {{search.length || 0}}
 </p>
   `
