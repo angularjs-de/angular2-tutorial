@@ -13,7 +13,7 @@ export class PizzaService {
   ) { }
 
   getPizza(): Observable<Pizza[]> {
-    return this.http.get('pizza.json')
+    return this.http.get('assets/pizza.json')
       .map((res: Response) => res.json());
   }
 }
