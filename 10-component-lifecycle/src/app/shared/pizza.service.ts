@@ -11,7 +11,7 @@ export class PizzaService {
   ) { }
 
   getPizza() {
-    return this.http.get('pizza.json')
+    return this.http.get('assets/pizza.json')
       .map((res: Response) => res.json());
   }
 }
